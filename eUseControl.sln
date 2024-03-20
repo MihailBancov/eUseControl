@@ -5,6 +5,10 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eUseControl.Web", "eUseControl.Web.csproj", "{2EBC7DB6-63D2-4D43-A988-F2D6B923FB0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eUseControl.BusinessLogic", "..\BusinessLogic\eUseControl.BusinessLogic.csproj", "{BC18699D-82FD-41FD-9750-DB9375B55C29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eUseControl.Domain", "..\eUseControl.Domain\eUseControl.Domain.csproj", "{0F6917E2-1FBA-40BC-9C88-99D739202B50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{2EBC7DB6-63D2-4D43-A988-F2D6B923FB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EBC7DB6-63D2-4D43-A988-F2D6B923FB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EBC7DB6-63D2-4D43-A988-F2D6B923FB0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC18699D-82FD-41FD-9750-DB9375B55C29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC18699D-82FD-41FD-9750-DB9375B55C29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC18699D-82FD-41FD-9750-DB9375B55C29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC18699D-82FD-41FD-9750-DB9375B55C29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F6917E2-1FBA-40BC-9C88-99D739202B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F6917E2-1FBA-40BC-9C88-99D739202B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F6917E2-1FBA-40BC-9C88-99D739202B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F6917E2-1FBA-40BC-9C88-99D739202B50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
