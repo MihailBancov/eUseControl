@@ -115,14 +115,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\CSS\bootstrap.min.css" />
-    <Content Include="Content\CSS\elegant-icons.css" />
-    <Content Include="Content\CSS\font-awesome.min.css" />
-    <Content Include="Content\CSS\jquery-ui.min.css" />
-    <Content Include="Content\CSS\nice-select.css" />
-    <Content Include="Content\CSS\owl.carousel.min.css" />
-    <Content Include="Content\CSS\slicknav.min.css" />
-    <Content Include="Content\CSS\style.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Images\banner\banner-1.jpg" />
@@ -232,9 +224,8 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="fonts\ElegantIcons.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="fonts\MyFonts\ElegantIcons.svg" />
-    <Content Include="fonts\MyFonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
@@ -269,14 +260,6 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="fonts\MyFonts\ElegantIcons.eot" />
-    <Content Include="fonts\MyFonts\ElegantIcons.ttf" />
-    <Content Include="fonts\MyFonts\ElegantIcons.woff" />
-    <Content Include="fonts\MyFonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\MyFonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\MyFonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\MyFonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\MyFonts\FontAwesome.otf" />
     <Content Include="Content\SASS\style.scss" />
     <Content Include="Content\SASS\_base.scss" />
     <Content Include="Content\SASS\_blog-details.scss" />
@@ -296,6 +279,9 @@
     <Content Include="Content\SASS\_shoping-cart.scss" />
     <Content Include="Content\SASS\_sidebar.scss" />
     <Content Include="Content\SASS\_variable.scss" />
+    <Content Include="fonts\ElegantIcons.eot" />
+    <Content Include="fonts\ElegantIcons.ttf" />
+    <Content Include="fonts\ElegantIcons.woff" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -304,16 +290,14 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.13.2.js" />
     <Content Include="Scripts\jquery-ui-1.13.2.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.nice-select.min.js" />
+    <Content Include="Scripts\jquery.slicknav.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\MyScripts\bootstrap.min.js" />
-    <Content Include="Scripts\MyScripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\MyScripts\jquery-ui.min.js" />
-    <Content Include="Scripts\MyScripts\jquery.nice-select.min.js" />
-    <Content Include="Scripts\MyScripts\jquery.slicknav.js" />
-    <Content Include="Scripts\MyScripts\main.js" />
-    <Content Include="Scripts\MyScripts\mixitup.min.js" />
-    <Content Include="Scripts\MyScripts\owl.carousel.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\mixitup.min.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

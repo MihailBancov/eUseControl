@@ -12,7 +12,7 @@
     <title>eUseSystem | @ViewBag.Title</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200:300,400,600,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200:300,400,600,900&display=swap" rel="stylesheet" type="text/css">
 
     @Styles.Render("~/bundles/bootstrap/css")
     @Styles.Render("~/bundles/font/css")
@@ -23,6 +23,10 @@
     @Styles.Render("~/bundles/slicknav/css")
     @Styles.Render("~/bundles/style/css")
 
+    @if(IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false) }
+
+    @Styles.Render("~/bundles/main/css")
 
 </head>
 <body>
