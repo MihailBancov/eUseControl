@@ -1,0 +1,58 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> @ViewBag.Title</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200:300,400,600,900&display=swap" rel="stylesheet" type="text/css">
+
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Styles.Render("~/bundles/font/css")
+    @Styles.Render("~/bundles/elegant/css")
+    @Styles.Render("~/bundles/nice/css")
+    @Styles.Render("~/bundles/jquery/css")
+    @Styles.Render("~/bundles/owlcarousel/css")
+    @Styles.Render("~/bundles/slicknav/css")
+    @Styles.Render("~/bundles/style/css")
+
+    @if(IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false) }
+
+    @Styles.Render("~/bundles/main/css")
+
+</head>
+<body>
+
+    @Html.Partial("_Humburger")
+
+    <header>
+        @Html.Partial("_Header")
+    </header>
+
+
+    @*body*@
+    @RenderBody()
+    @*body*@
+
+    <footer>
+        @Html.Partial("_Footer")
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery/js")
+    @Scripts.Render("~/bundles/bootstrap/js")
+    @Scripts.Render("~/bundles/jquerynice/js")
+    @Scripts.Render("~/bundles/jqueryui/js")
+    @Scripts.Render("~/bundles/jqueryslicknav/js")
+    @Scripts.Render("~/bundles/mixitup/js")
+    @Scripts.Render("~/bundles/owlcarousel/js")
+    @Scripts.Render("~/bundles/main/js")
+</body>
+</html>
