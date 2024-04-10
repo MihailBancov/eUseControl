@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using eUseControl.BusinessLogic.Interfaces;
 using eUseControl.BusinessLogic;
+using eUseControl.Models;
 
 
 namespace eUseControl.Web.Controllers 
@@ -16,6 +17,20 @@ namespace eUseControl.Web.Controllers
         {
             var bl = new BusinesLogic();
             _session = bl.GetSessionBL();
+        }
+        public ActionResult Index()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(UserLogin login)
+        {
+            if (ModelState.IsValid)     //Как происходит???
+            {
+
+            }
+            return View();
         }
     }
 }
