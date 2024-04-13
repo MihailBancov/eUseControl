@@ -1,0 +1,183 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAddCar.cshtml";
+}
+@model eUseControl.Models.VehicleData
+@using System.Web.Optimization
+
+<style>
+    .container {
+        margin-top: 100px;
+        max-width: 800px;
+        background: #f7f7f7;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-control {
+        margin-bottom: 15px;
+    }
+
+    .specs {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        .specs li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+    .spec span:first-child {
+        width: 150px;
+        font-weight: bold;
+    }
+
+    .spec input {
+        flex-grow: 1;
+    }
+
+    .item-1 {
+        text-align: center;
+    }
+
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    button[type="submit"] {
+        background: #007bff;
+        border: none;
+        padding: 10px 20px;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+        button[type="submit"]:hover {
+            background: #0056b3;
+        }
+</style>
+
+<div class="container" id="result">
+    <div class="row">
+        @using (Html.BeginForm("AddCar", "Home", FormMethod.Post, new { @id = "AddCarForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-lg-9" style="margin:auto">
+
+                <div class="nonloop-block-13 owl-carousel">
+                    <div class="item-1">
+                        <img alt='Image' class='img-fluid' src="~/Images/Cars/BMW_M5_CS.jpg" />
+                        <div class="item-1-contents">
+
+                            <ul class="specs">
+                                <li class="spec">
+                                    <span>Name</span>
+                                    @Html.TextBoxFor(car => car.name, new
+                                    {
+                                        placeholder = "Belarus",
+                                        value = "",
+                                        name = "name",
+                                        id = "name",
+                                        @class = "form-control"
+                                    })
+                                </li>
+                                <li class="spec">
+                                    <span>Price ($/day)</span>
+                                    @Html.TextBoxFor(car => car.price, new
+                                    {
+                                        placeholder = "500",
+                                        value = "",
+                                        name = "price",
+                                        id = "price",
+                                        @class = "form-control"
+                                    })
+                                </li>
+                                <li class="spec">
+                                    <span>Power</span>
+                                    @Html.TextBoxFor(car => car.Power, new
+                                    {
+                                        placeholder = "200",
+                                        value = "",
+                                        name = "Power",
+                                        id = "Power",
+                                        @class = "form-control"
+                                    })
+                                </li>
+                                <li class="spec">
+                                    <span>Torque</span>
+                                    @Html.TextBoxFor(car => car.torque, new
+                                    {
+                                        placeholder = "300",
+                                        value = "",
+                                        name = "seats",
+                                        id = "seats",
+                                        @class = "form-control"
+                                    })
+                                </li>
+                                <li class="spec">
+                                    <span>Weight</span>
+                                    @Html.TextBoxFor(car => car.weight, new
+                                    {
+                                        placeholder = "2500",
+                                        value = "",
+                                        name = "transmition",
+                                        id = "transmition",
+                                        @class = "form-control"
+                                    })
+                                </li>
+                            </ul>
+                            <button type="submit">Add car</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/validation/js")
+
+    <script type="text/javascript">
+        $(function () {
+            $("#AddCarForm").validate({
+                rules: {
+                    name: {
+                        required: true
+                    },
+                    price: {
+                        required: true
+                    },
+                    Power: {
+                        required: true
+                    },
+                    torque: {
+                        required: true
+                    },
+                    weight: {
+                        required: true
+                    },
+                },
+                submitHandler: function (form) {
+                    form.submit();
+                },
+                errorPlacement: function (error, element) {
+                    $(element)
+                        .closest("form")
+                        .find("label[for='" + element.attr("id") + "']")
+                        .append(error);
+                },
+                errorElement: "span"
+            });
+        });
+    </script>
+}
