@@ -1,0 +1,21 @@
+﻿
+@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    @Styles.Render("~/bundles/registration/css")
+    @Styles.Render("~/bundles/font-awesome/css")
+
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", false)}
+</head>
+
+<body>
+    @RenderBody()
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

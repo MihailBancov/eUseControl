@@ -1,78 +1,31 @@
 ﻿
-<div class="header__top">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="header__top__left">
-                    <ul>
-                        <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                        <li>Free Shipping for all Order of $99</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="header__top__right">
-                    <div class="header__top__right__social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                    </div>
-                    <div class="header__top__right__language">
-                        <img src="img/language.png" alt="">
-                        <div>English</div>
-                        <span class="arrow_carrot-down"></span>
-                        <ul>
-                            <li><a href="#">Spanis</a></li>
-                            <li><a href="#">English</a></li>
-                        </ul>
-                    </div>
-                    <div class="header__top__right__auth">
-                        <a href="#"><i class="fa fa-user"></i> Login</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="container">
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="header__logo">
-                <a href="./index.html"><img src="img/logo.png" alt=""></a>
-            </div>
+    <div class="row align-items-center position-relative" style="line-height: 0.5">
+
+        <div class="col-3 site-logo">
+            <a href=@Url.Action("Index","Home")>Sloboda</a>
         </div>
-        <div class="col-lg-6">
-            <nav class="header__menu">
-                <ul>
-                    <li class="active"><a href="./index.html">Home</a></li>
-                    <li><a href="./shop-grid.html">Shop</a></li>
-                    <li>
-                        <a href="#">Pages</a>
-                        <ul class="header__menu__dropdown">
-                            <li><a href="./shop-details.html">Shop Details</a></li>
-                            <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                            <li><a href="./checkout.html">Check Out</a></li>
-                            <li><a href="./blog-details.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+
+        <div class="col-9  text-right">
+
+
+            <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
+
+
+
+
+            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                    <li class=@ViewBag.index><a href=@Url.Action("Index") class="nav-link">Home</a></li>
+                    <li class=@ViewBag.cars><a href=@Url.Action("Cars") class="nav-link">Vehicles</a></li>
+                    <li class=@ViewBag.contact><a href=@Url.Action("Contact") class="nav-link">Contact</a></li>
+                    <li class=@ViewBag.add><a href=@Url.Action("AddCar") class="nav-link">Add</a></li>
+                    <li style="color: aquamarine"><img src="~/Images/Headers/user_icon.png" alt="#" height="20" style="padding-bottom:5px" /> @ViewBag.UserName</li>
+                    <li class=@ViewBag.logout><a href=@Url.Action("Index","Login") class="nav-link">Logout</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="col-lg-3">
-            <div class="header__cart">
-                <ul>
-                    <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                </ul>
-                <div class="header__cart__price">item: <span>$150.00</span></div>
-            </div>
-        </div>
-    </div>
-    <div class="humberger__open">
-        <i class="fa fa-bars"></i>
+
+
     </div>
 </div>
-

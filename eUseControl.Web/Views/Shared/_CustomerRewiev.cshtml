@@ -1,0 +1,93 @@
+﻿@using System.Web.Optimization
+@model CarRental.Web.Models.IndexData
+@{
+    string msg = "gg";
+}
+
+<!--Customer Reviews-->
+
+<div class="container" id="result">
+    <div class="row">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @id = "AddReviewForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-lg-9" style="margin:auto">
+                <h3>Our Offer</h3>
+                <p class="mb-4">Powerful, representative, respectable cars that will accompany you all the way, giving you comfort and a chic mood!</p>
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+                    @*@{
+                            foreach (var customer in Model.customerReviews.Reviews)
+                            {
+                                <div class="mySlidesReview">
+                                    <span style="text-decoration:underline;font-style:oblique;">@customer.Name</span>
+                                    <div class="d-flex v-card align-items-center">
+                                        <img src="~/Images/Customers/person_1.jpg" alt="Image" class="img-fluid mr-3">
+                                        <p style="padding-right:45px">~ @customer.Message ~</p>
+                                    </div>
+                                    @if (ViewBag.Role == CarRental.Domain.Enums.URole.Admin)
+                                    {
+                                        <a href="@Url.Action("DeleteReview", "Home", new { name = customer.Message })">❌ Delete this review</a>
+                                    }
+                                <div style="display:inline-block;position:absolute; right:0px">
+                                    <input name="btn"/>
+                                    <button type="submit">Add Review</button>
+                                </div>
+                                </div>
+                            }
+                        }*@
+                    <a class="preva" onclick="plusSlidesReview(-1)">&#10094;</a>
+                    <a class="nexta" onclick="plusSlidesReview(1)">&#10095;</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var slideIndexRev = 1;
+    var rev = true;
+    show(slideIndex);
+
+    // Next/previous controls
+    function plusSlidesReview(n) {
+        show(slideIndexRev += n);
+    }
+
+    function show(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlidesReview");
+
+        if (n > slides.length) { slideIndexRev = 1 }
+        if (n < 1) { slideIndexRev = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndexRev - 1].style.display = "block";
+    }
+</script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/validation/js")
+
+    <script type="text/javascript">
+        $(function () {
+
+            $("#AddReviewForm").validate({
+
+                submitHandler: function (form) {
+                    form.submit();
+                },
+                errorPlacement: function (error, element) {
+                    $(element)
+                        .closest("form")
+                        .find("label[for='" + element.attr("id") + "']")
+                        .append(error);
+                },
+                errorElement: "span"
+            });
+        });
+    </script>
+}

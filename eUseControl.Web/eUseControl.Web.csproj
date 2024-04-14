@@ -245,11 +245,22 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Shared\_Humburger.cshtml" />
+    <Content Include="Views\Shared\_VehicleConfigBlock.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Login\index.cshtml" />
     <Content Include="Views\Home\AddVehicle.cshtml" />
     <Content Include="Views\Home\contact.cshtml" />
+    <Content Include="Views\Shared\_VehiclesLayout.cshtml" />
+    <Content Include="Views\Shared\_ContactLayout.cshtml" />
+    <Content Include="Views\Shared\_CustomerRewiev.cshtml" />
+    <Content Include="Views\Shared\HeaderInfoData.cshtml" />
+    <Content Include="Views\Shared\_Layout_Authorization.cshtml" />
+    <Content Include="Views\Shared\_LayotAddVehicle.cshtml" />
+    <Content Include="Views\Shared\_OrderFlow.cshtml" />
+    <Content Include="Views\Shared\SuccesAddingVehicle.cshtml" />
+    <Content Include="Views\Home\SuccessefulOperation.cshtml" />
+    <Content Include="Views\Home\Vehicles.cshtml" />
+    <Content Include="Views\Registration\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

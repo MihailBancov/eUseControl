@@ -1,0 +1,70 @@
+﻿@using System.Web.Optimization
+@model CarRental.Web.Models.ProdStore
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Images/Headers/web_icon.png" rel="shortcut icon" type="image/x-icon" />
+    <title>Sloboda </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    @Styles.Render("~/bundles/icomoon/css")
+    @Styles.Render("~/bundles/DMSans/css")
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Styles.Render("~/bundles/flaticon/css")
+
+    @if (IsSectionDefined("Styles"))
+    {
+        @RenderSection("Styles", false)
+    }
+
+    <!-- MAIN CSS -->
+    @Styles.Render("~/bundles/main/css")
+
+</head>
+
+<body style="font-family:'DM Sans'" data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <div class="site-wrap" id="home-section">
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+        <header class="site-navbar site-navbar-target" role="banner">
+            @Html.Partial("_Header")
+        </header>
+        <div class="ftco-blocks-cover-1">
+            @Html.Partial("_HeaderInfoData")
+        </div>
+
+        <!-- SEARCH BAR -->
+        <div class="d-flex justify-content-center my-4">
+            @using (Html.BeginForm("Cars", "Home", FormMethod.Post, new { @id = "SearchForm", @class = "d-flex" }))
+            {
+                <select class="form-select me-2" name="@Html.NameFor(x => x.SelectedCategory)" id="@Html.IdFor(x => x.SelectedCategory)">
+                    <option class="active" value="All">All Categories</option>
+                    <option value="Swimming">Swimming</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Football">Football</option>
+                </select>
+                <input class="form-control me-2" id="@Html.IdFor(x => x.SelectedName)" name="@Html.NameFor(x => x.SelectedName)" placeholder="Search here">
+                <button class="btn btn-primary">Search</button>
+            }
+        </div>
+        <!-- /SEARCH BAR -->
+
+        @RenderBody()
+        <div class="container site-section mb-5">
+            @Html.Partial("_OrderFlow")
+        </div>
+        <footer class="site-footer">
+            @Html.Partial("_Footer")
+        </footer>
+    </div>
+
+</body>
+</html>

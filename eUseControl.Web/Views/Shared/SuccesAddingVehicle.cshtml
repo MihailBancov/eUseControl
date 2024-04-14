@@ -1,0 +1,19 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Images/Headers/web_icon.png" rel="shortcut icon" type="image/x-icon" />
+    <title>Car Rent </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+<body style="font-family:'DM Sans'" data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    @RenderBody()
+    <div style="margin: 30px 50px; font-size:larger; color:aqua;">
+        Successful Adding!
+    </div>
+
+    <a href=@Url.Action("Index","Home")>Go Back</a>
+</body>
+</html>
