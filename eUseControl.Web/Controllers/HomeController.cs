@@ -12,7 +12,7 @@ namespace eUseControl.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            UserData u = new UserData();
+            UserRegistration u = new UserRegistration();
             u.UserName = "Customer";
             u.Products = new List<string> { "Product #1", "Product #2" };
             return View(u);

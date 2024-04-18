@@ -123,9 +123,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserData.cs" />
+    <Compile Include="Models\CustomerReview.cs" />
+    <Compile Include="Models\CustomerReviews.cs" />
+    <Compile Include="Models\IndexData.cs" />
+    <Compile Include="Models\ProdStore.cs" />
+    <Compile Include="Models\UserRegistration.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\VehicleData.cs" />
+    <Compile Include="Models\VehiclesData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -253,7 +258,7 @@
     <Content Include="Views\Shared\_VehiclesLayout.cshtml" />
     <Content Include="Views\Shared\_ContactLayout.cshtml" />
     <Content Include="Views\Shared\_CustomerRewiev.cshtml" />
-    <Content Include="Views\Shared\HeaderInfoData.cshtml" />
+    <Content Include="Views\Shared\_HeaderInfoData.cshtml" />
     <Content Include="Views\Shared\_Layout_Authorization.cshtml" />
     <Content Include="Views\Shared\_LayotAddVehicle.cshtml" />
     <Content Include="Views\Shared\_OrderFlow.cshtml" />
@@ -293,6 +298,9 @@
       <Project>{92185349-7937-4ab8-babd-9216b77aee86}</Project>
       <Name>eUseControl.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
