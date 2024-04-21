@@ -1,21 +1,149 @@
-﻿using eUseControl.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using CarRental.BusinessLogic;
+using CarRental.BusinessLogic.Interfaces;
+using CarRental.Web.Models;
+using CarRental.Domain.Entities.Car;
+using CarRental.Web.Extension;
+using AutoMapper;
+using CarRental.Web.Attribute;
+using CarRental.Domain.Entities.Review;
+using eUseControl.Models;
 
-namespace eUseControl.Controllers
+namespace CarRental.Web.Controllers
 {
-    public class HomeController : Controller
+
+    public class HomeController : BaseController
     {
+        private readonly ISession _session;
+        private readonly ISessionAdmin _session_admin;
+        public HomeController()
+        {
+            var bl = new BussinessLogic();
+            _session = bl.GetSessionBL();   //session=SessionBL
+            _session_admin = bl.GetSessionAdmin();
+        }
         // GET: Home
         public ActionResult Index()
         {
-            UserRegistration u = new UserRegistration();
-            u.UserName = "Customer";
-            u.Products = new List<string> { "Product #1", "Product #2" };
-            return View(u);
+            SessionStatus();
+            if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] != "login")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            //if(System.Web.HttpContext.Current.GetMySessionObject().Level==CarRental.Domain.Enums.URole.Admin)
+            //{
+            //    return RedirectToAction("Admin", "Home");
+            //}
+
+            ViewBag.Role = System.Web.HttpContext.Current.GetMySessionObject().Level;
+            ViewBag.UserName = System.Web.HttpContext.Current.GetMySessionObject().Username;
+            ViewBag.index = "active";
+            Mapper.Reset();
+            Mapper.Initialize(cfg => cfg.CreateMap<CarData, Car>());
+            var Cardata = _session.GetCars();
+            var Reviewdata = _session.GetReviews();
+
+            IndexData indexdata = new IndexData();
+            foreach (var car in Cardata)
+            {
+                indexdata.carsData.cars.Add(Mapper.Map<CarData>(car));
+            }
+
+            Mapper.Reset();
+            Mapper.Initialize(rfg => rfg.CreateMap<CustomerReview, UserReview>());
+            foreach (var review in Reviewdata)
+            {
+                indexdata.customerReviews.Reviews.Add(Mapper.Map<CustomerReview>(review));
+            }
+            return View(indexdata);
+        }
+        public ActionResult AddReview()
+        {
+            CustomerReview Review = new CustomerReview
+            {
+                Message = Request.QueryString["r"],
+                Name = System.Web.HttpContext.Current.GetMySessionObject().Username
+            };
+            Mapper.Reset();
+            Mapper.Initialize(rfg => rfg.CreateMap<CustomerReview, UserReview>());
+            _session.AddReview(Mapper.Map<UserReview>(Review));
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Index(string btn)
+        {
+            return RedirectToAction("AddReview", "Home", new { @r = btn });
+        }
+        public ActionResult Contact()
+        {
+            SessionStatus();
+            if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] != "login")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            ViewBag.UserName = System.Web.HttpContext.Current.GetMySessionObject().Username;
+            ViewBag.contact = "active";
+            ViewBag.Info_h1 = "Contact Us";
+            ViewBag.Info_p = "~ We are waiting for your suggestions! ~";
+            return View();
+        }
+        public ActionResult Cars()
+        {
+            SessionStatus();
+            if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] != "login")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            ViewBag.UserName = System.Web.HttpContext.Current.GetMySessionObject().Username;
+            ViewBag.cars = "active";
+            ViewBag.Info_h1 = "Our For Rent Cars";
+            ViewBag.Info_p = "~ You rent more than a car ~";
+            return View();
+        }
+
+        [AdminMod]
+        public ActionResult DeleteReview(string name)
+        {
+            _session_admin.DeleteReview(name);
+            return RedirectToAction("Index");
+
+        }
+        [AdminMod]
+        public ActionResult DeleteCar(string name)
+        {
+            _session_admin.DeleteCar(name);
+            return RedirectToAction("Index");
+        }
+
+        [AdminMod]
+        public ActionResult AddCar()
+        {
+            return View();
+        }
+        [AdminMod]
+        [HttpPost]
+        public ActionResult AddCar(CarData car)
+        {
+            Mapper.Reset();
+            Mapper.Initialize(cfg => cfg.CreateMap<CarData, Car>());
+            var adding = _session_admin.AddCar(Mapper.Map<Car>(car));
+            if (adding.Status)
+            {
+                return RedirectToAction("SuccessfulOperation");
+            }
+            else
+            {
+                ModelState.AddModelError("", adding.StatusMsg);
+                return View();
+            }
+        }
+        [AdminMod]
+        public ActionResult SuccessfulOperation()
+        {
+            return View();
         }
     }
 }
