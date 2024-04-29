@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eUseControl.Domain.Enteties.User
+namespace CarRental.Domain.Entities.User
 {
-    internal class ULoginData
+    public class ULoginData
     {
+        public string Name { get; set; }
         public string Credential { get; set; }
         public string Password { get; set; }
         public string LoginIp { get; set; }

@@ -41,8 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enteties\Review\UserReview.cs" />
+    <Compile Include="Enteties\User\Session.cs" />
     <Compile Include="Enteties\User\UDbTable.cs" />
     <Compile Include="Enteties\User\ULoginData.cs" />
+    <Compile Include="Enteties\User\ULoginResp.cs" />
+    <Compile Include="Enteties\User\UserMinimal.cs" />
+    <Compile Include="Enteties\Vehicle\ProdMin.cs" />
+    <Compile Include="Enteties\Vehicle\Vehicle.cs" />
+    <Compile Include="Enums\URole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
