@@ -1,12 +1,20 @@
-﻿using System;
+﻿using System.Web;
+using System.Data.Entity;
+using CarRental.Domain.Entities.User;
+using eUseControl.Domain.Entities.User;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Remoting.Contexts;
 
-namespace eUseControl.BusinessLogic.DBModel
+namespace BusinessLogic.DBModel
 {
-    internal class UserContext
+    class UserContext : DbContext
     {
+        public UserContext() :
+            base("name=eUseControl") //connectionString name define in your web.config
+        {
+        }
+
+        public virtual DbSet<UDbTable> Users { get; set; }
     }
+
 }
