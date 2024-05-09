@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Domain.Entities.Review
+namespace eUseControl.Domain.Entities.Review
 {
     public class UserReview
     {

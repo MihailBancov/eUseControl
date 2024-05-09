@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Domain.Entities.User
+namespace eUseControl.Domain.Entities.User
 {
     public class Session
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CarRental.Domain.Enums;
+using eUseControl.Domain.Enums;
 
-namespace CarRental.Domain.Entities.User
+namespace eUseControl.Domain.Entities.User
 {
     public class UserMinimal
     {

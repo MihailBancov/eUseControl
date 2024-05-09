@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Domain.Entities.Car
+namespace eUseControl.Domain.Entities.Car
 {
     public class ProdMin
     {
