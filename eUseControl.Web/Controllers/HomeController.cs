@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using CarRental.BusinessLogic;
-using CarRental.BusinessLogic.Interfaces;
-using CarRental.Web.Models;
-using CarRental.Domain.Entities.Car;
-using CarRental.Web.Extension;
+using eUseControl.BusinessLogic;
+using eUseControl.BusinessLogic.Interfaces;
+using eUseControl.Web.Models;
+using eUseControl.Domain.Entities.Vehicle;
+using eUseControl.Web.Extension;
 using AutoMapper;
-using CarRental.Web.Attribute;
-using CarRental.Domain.Entities.Review;
+using eUseControl.Web.Attribute;
+using eUseControl.Domain.Entities.Review;
 using eUseControl.Models;
 
-namespace CarRental.Web.Controllers
+namespace eUseControl.Web.Controllers
 {
 
     public class HomeController : BaseController
@@ -32,7 +32,7 @@ namespace CarRental.Web.Controllers
             {
                 return RedirectToAction("Index", "Login");
             }
-            //if(System.Web.HttpContext.Current.GetMySessionObject().Level==CarRental.Domain.Enums.URole.Admin)
+            //if(System.Web.HttpContext.Current.GetMySessionObject().Level==eUseControl.Domain.Enums.URole.Admin)
             //{
             //    return RedirectToAction("Admin", "Home");
             //}
@@ -41,14 +41,14 @@ namespace CarRental.Web.Controllers
             ViewBag.UserName = System.Web.HttpContext.Current.GetMySessionObject().Username;
             ViewBag.index = "active";
             Mapper.Reset();
-            Mapper.Initialize(cfg => cfg.CreateMap<CarData, Car>());
+            Mapper.Initialize(cfg => cfg.CreateMap<VehicleData, Vehicle>());
             var Cardata = _session.GetCars();
             var Reviewdata = _session.GetReviews();
 
             IndexData indexdata = new IndexData();
             foreach (var car in Cardata)
             {
-                indexdata.carsData.cars.Add(Mapper.Map<CarData>(car));
+                indexdata.vehiclesData.vehicles.Add(Mapper.Map<VehicleData>(car));
             }
 
             Mapper.Reset();
@@ -125,11 +125,11 @@ namespace CarRental.Web.Controllers
         }
         [AdminMod]
         [HttpPost]
-        public ActionResult AddCar(CarData car)
+        public ActionResult AddCar(VehicleData car)
         {
             Mapper.Reset();
-            Mapper.Initialize(cfg => cfg.CreateMap<CarData, Car>());
-            var adding = _session_admin.AddCar(Mapper.Map<Car>(car));
+            Mapper.Initialize(cfg => cfg.CreateMap<VehicleData, Vehicle>());
+            var adding = _session_admin.AddCar(Mapper.Map<Vehicle>(car));
             if (adding.Status)
             {
                 return RedirectToAction("SuccessfulOperation");

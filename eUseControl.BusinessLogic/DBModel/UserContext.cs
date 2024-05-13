@@ -1,6 +1,6 @@
 ﻿using System.Web;
 using System.Data.Entity;
-using CarRental.Domain.Entities.User;
+using eUseControl.Domain.Entities.User;
 using eUseControl.Domain.Entities.User;
 using System.Collections.Generic;
 using System.Runtime.Remoting.Contexts;

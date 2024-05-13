@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using CarRental.BusinessLogic;
-using CarRental.BusinessLogic.Interfaces;
-using CarRental.Web.Extension;
+using eUseControl.BusinessLogic;
+using eUseControl.BusinessLogic.Interfaces;
+using eUseControl.Web.Extension;
 
-namespace CarRental.Web.Controllers
+namespace eUseControl.Web.Controllers
 {
     public class BaseController : Controller
     {

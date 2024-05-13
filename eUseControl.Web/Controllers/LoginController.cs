@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
-using CarRental.BusinessLogic;
-using CarRental.BusinessLogic.Interfaces;
-using CarRental.Domain.Entities.User;
-using CarRental.Web.Models;
+using eUseControl.BusinessLogic;
+using eUseControl.BusinessLogic.Interfaces;
+using eUseControl.Domain.Entities.User;
+using eUseControl.Web.Models;
 using eUseControl.Models;
 
 
-namespace CarRental.Web.Controllers
+namespace eUseControl.Web.Controllers
 {
     public class LoginController : BaseController
     {

@@ -2,7 +2,7 @@
 using System.Web;
 using eUseControl.BusinessLogic.Core;
 using eUseControl.BusinessLogic.Interfaces;
-using eUseControl.Domain.Entities.Car;
+using eUseControl.Domain.Entities.Vehicle;
 using eUseControl.Domain.Entities.Review;
 using eUseControl.Domain.Entities.User;
 
@@ -26,7 +26,7 @@ namespace eUseControl.BusinessLogic
         {
             return UserCookie(apiCookieValue);
         }
-        public List<Car> GetCars()
+        public List<Vehicle> GetCars()
         {
             return Car();
         }

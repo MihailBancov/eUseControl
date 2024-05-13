@@ -8,7 +8,7 @@ using System.Web;
 using AutoMapper;
 using BusinessLogic.DBModel;
 using eUseControl.BusinessLogic.DBModel;
-using eUseControl.Domain.Entities.Car;
+using eUseControl.Domain.Entities.Vehicle;
 using eUseControl.Domain.Entities.User;
 using eUseControl.Domain.Enums;
 using eUseControl.Helpers;
@@ -17,16 +17,16 @@ namespace eUseControl.BusinessLogic.Core
 {
     public class AdminApi
     {
-        internal ULoginResp AddNewCar(Car car)
+        internal ULoginResp AddNewCar(Vehicle car)
         {
             if (car.Name == null && car.Price == 0 && car.Power == 0 && car.Torque == 0 && car.Weight == 0)
             {
                 return new ULoginResp { Status = false, StatusMsg = "Not all fields are filled out correctly!" };
             }
 
-            using (var db = new CarContext())
+            using (var db = new VehicleContext())
             {
-                db.Cars.Add(car);    //добавляем запись в базу данных 
+                db.Vehicles.Add(car);    //добавляем запись в базу данных 
                 db.SaveChanges();
             }
             return new ULoginResp { Status = true };
@@ -34,12 +34,12 @@ namespace eUseControl.BusinessLogic.Core
 
         internal void DeleteCurrentCar(string carName)
         {
-            using (var db = new CarContext())
+            using (var db = new VehicleContext())
             {
-                var deleteCar = db.Cars.FirstOrDefault(car => car.Name == carName);
+                var deleteCar = db.Vehicles.FirstOrDefault(car => car.Name == carName);
                 if (deleteCar != null)
                 {
-                    db.Cars.Remove(deleteCar);
+                    db.Vehicles.Remove(deleteCar);
                     db.SaveChanges();
                 }
             }

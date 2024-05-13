@@ -5,13 +5,13 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
-using eUseControl.Domain.Entities.Car;
+using eUseControl.Domain.Entities.Vehicle;
 
 namespace eUseControl.BusinessLogic.DBModel
 {
-    public class CarContext : DbContext
+    public class VehicleContext : DbContext
     {
-        public CarContext() : base("name=eUseControl")
+        public VehicleContext() : base("name=eUseControl")
         {
         }
 

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
-using eUseControl.Domain.Entities.Car;
+using eUseControl.Domain.Entities.Vehicle;
 
 using eUseControl.Domain.Entities.Review;
 

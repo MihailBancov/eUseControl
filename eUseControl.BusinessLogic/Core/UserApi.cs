@@ -8,12 +8,11 @@ using System.Web;
 using AutoMapper;
 using BusinessLogic.DBModel;
 using eUseControl.BusinessLogic.DBModel;
-using eUseControl.Domain.Entities.Car;
+using eUseControl.Domain.Entities.Vehicle;
 using eUseControl.Domain.Entities.Review;
 using eUseControl.Domain.Entities.User;
 using eUseControl.Domain.Enums;
 using eUseControl.Helpers;
-using eUseControl.BusinessLogic.DBModel;
 
 namespace eUseControl.BusinessLogic
 {
@@ -179,12 +178,12 @@ namespace eUseControl.BusinessLogic
 
             return userminimal;
         }
-        internal List<Car> Car()
+        internal List<Vehicle> Car()
         {
-            List<Car> result = new List<Car>();
-            using (var db = new CarContext())
+            List<Vehicle> result = new List<Vehicle>();
+            using (var db = new VehicleContext())
             {
-                var cars = db.Cars;
+                var cars = db.Vehicles;
                 foreach (var c in cars)
                 {
                     result.Add(c);

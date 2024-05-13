@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eUseControl.Domain.Entities.Car
+namespace eUseControl.Domain.Entities.Vehicle
 {
-    public class Car
+    public class Vehicle
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
