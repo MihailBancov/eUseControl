@@ -90,7 +90,7 @@ namespace eUseControl.Web.Controllers
             ViewBag.Info_p = "~ We are waiting for your suggestions! ~";
             return View();
         }
-        public ActionResult Cars()
+        public ActionResult Vehicles()
         {
             SessionStatus();
             if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] != "login")
@@ -99,8 +99,8 @@ namespace eUseControl.Web.Controllers
             }
             ViewBag.UserName = System.Web.HttpContext.Current.GetMySessionObject().Username;
             ViewBag.cars = "active";
-            ViewBag.Info_h1 = "Our For Rent Cars";
-            ViewBag.Info_p = "~ You rent more than a car ~";
+            ViewBag.Info_h1 = "Our For Agricultural Machinery";
+            ViewBag.Info_p = "~ You buy more than a vehicle ~";
             return View();
         }
 
@@ -119,13 +119,13 @@ namespace eUseControl.Web.Controllers
         }
 
         [AdminMod]
-        public ActionResult AddCar()
+        public ActionResult AddVehicle()
         {
             return View();
         }
         [AdminMod]
         [HttpPost]
-        public ActionResult AddCar(VehicleData car)
+        public ActionResult AddVehicle(VehicleData car)
         {
             Mapper.Reset();
             Mapper.Initialize(cfg => cfg.CreateMap<VehicleData, Vehicle>());

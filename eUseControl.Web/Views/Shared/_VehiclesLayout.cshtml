@@ -1,5 +1,5 @@
 ﻿@using System.Web.Optimization
-@model CarRental.Web.Models.ProdStore
+@model eUseControl.Web.Models.ProdStore
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,13 +43,13 @@
 
         <!-- SEARCH BAR -->
         <div class="d-flex justify-content-center my-4">
-            @using (Html.BeginForm("Cars", "Home", FormMethod.Post, new { @id = "SearchForm", @class = "d-flex" }))
+            @using (Html.BeginForm("Vehicles", "Home", FormMethod.Post, new { @id = "SearchForm", @class = "d-flex" }))
             {
                 <select class="form-select me-2" name="@Html.NameFor(x => x.SelectedCategory)" id="@Html.IdFor(x => x.SelectedCategory)">
                     <option class="active" value="All">All Categories</option>
-                    <option value="Swimming">Swimming</option>
-                    <option value="Basketball">Basketball</option>
-                    <option value="Football">Football</option>
+                    <option value="Swimming">Tractor</option>
+                    <option value="Basketball">Harvester</option>
+                    <option value="Football">Truck</option>
                 </select>
                 <input class="form-control me-2" id="@Html.IdFor(x => x.SelectedName)" name="@Html.NameFor(x => x.SelectedName)" placeholder="Search here">
                 <button class="btn btn-primary">Search</button>

@@ -263,12 +263,12 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_VehicleConfigBlock.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Login\index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Home\AddVehicle.cshtml" />
     <Content Include="Views\Home\contact.cshtml" />
     <Content Include="Views\Shared\_VehiclesLayout.cshtml" />
     <Content Include="Views\Shared\_ContactLayout.cshtml" />
-    <Content Include="Views\Shared\_CustomerRewiev.cshtml" />
+    <Content Include="Views\Shared\_CustomerReview.cshtml" />
     <Content Include="Views\Shared\_HeaderInfoData.cshtml" />
     <Content Include="Views\Shared\_Layout_Authorization.cshtml" />
     <Content Include="Views\Shared\_LayotAddVehicle.cshtml" />

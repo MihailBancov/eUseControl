@@ -11,9 +11,9 @@
                 <p class="mb-4">Robust, reliable, and efficient agricultural machinery that supports you every step of the way, ensuring comfort and productivity in your farming operations!</p>
                 <!-- Slideshow container -->
                 <div class="slideshow-container">
-                    @if (Model?.carsData?.cars != null)
+                    @if (Model?.vehiclesData?.vehicles != null)
                     {
-                        foreach (var car in Model.carsData.cars)
+                        foreach (var car in Model.vehiclesData.vehicles)
                         {
                             <div class="mySlides">
                                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -57,7 +57,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                @if (ViewBag.Role == eUseControl.Domain.)
+                                @if (ViewBag.Role == eUseControl.Domain.Enums.URole.Admin)
                                 {
                                     <a name="deleteCar" href="@Url.Action("DeleteCar", "Home", new { name = car.name })">❌ Delete this car</a>
                                 }

@@ -1,58 +1,61 @@
 ﻿@using System.Web.Optimization
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> @ViewBag.Title</title>
+    <link href="~/Images/Headers/web_icon.png" rel="shortcut icon" type="image/x-icon" />
+    <title>Sloboda </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200:300,400,600,900&display=swap" rel="stylesheet" type="text/css">
+    @Styles.Render("~/bundles/icomoon/css")
+
+    @Styles.Render("~/bundles/DMSans/css")
 
     @Styles.Render("~/bundles/bootstrap/css")
-    @Styles.Render("~/bundles/font/css")
-    @Styles.Render("~/bundles/elegant/css")
-    @Styles.Render("~/bundles/nice/css")
-    @Styles.Render("~/bundles/jquery/css")
-    @Styles.Render("~/bundles/owlcarousel/css")
-    @Styles.Render("~/bundles/slicknav/css")
-    @Styles.Render("~/bundles/style/css")
 
-    @if(IsSectionDefined("Styles"))
-    {@RenderSection("Styles", required: false) }
+    @Styles.Render("~/bundles/flaticon/css")
 
+    @Styles.Render("~/bundles/slideshow/css")
+
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", false)}
+
+    <!-- MAIN CSS -->
     @Styles.Render("~/bundles/main/css")
 
 </head>
-<body>
+<body style="font-family:'DM Sans'" data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-    @Html.Partial("_Humburger")
+    <div class="site-wrap" id="home-section">
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+        <header class="site-navbar site-navbar-target" role="banner">
+            @Html.Partial("_Header")
+        </header>
+        @Html.Partial("_VehicleConfigBlock")
 
-    <header>
-        @Html.Partial("_Header")
-    </header>
+        <div id="cars" class="site-section bg-light">
+            @RenderBody()
+        </div>
 
+        <div class="container site-section mb-5">
+            @Html.Partial("_OrderFlow")
+        </div>
+        <div class="site-section bg-light">
+            @Html.Partial("_CustomerReview")
+        </div>
 
-    @*body*@
-    @RenderBody()
-    @*body*@
-
-    <footer>
-        @Html.Partial("_Footer")
-    </footer>
-
+        <footer class="site-footer">
+            @Html.Partial("_Footer")
+        </footer>
+    </div>
     @Scripts.Render("~/bundles/jquery/js")
-    @Scripts.Render("~/bundles/bootstrap/js")
-    @Scripts.Render("~/bundles/jquerynice/js")
-    @Scripts.Render("~/bundles/jqueryui/js")
-    @Scripts.Render("~/bundles/jqueryslicknav/js")
-    @Scripts.Render("~/bundles/mixitup/js")
-    @Scripts.Render("~/bundles/owlcarousel/js")
-    @Scripts.Render("~/bundles/main/js")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
